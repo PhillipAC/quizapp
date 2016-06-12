@@ -1,7 +1,7 @@
 class MembershipsController < ApplicationController
     def new
         @membership = Membership.new
-        @team = Team.find params[:id]
+        @team = Team.find params[:team_id]
         @non_members = non_members(@team)
     end
     

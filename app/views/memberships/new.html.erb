@@ -2,11 +2,8 @@ Non-Members To <%= @team.name %>
 
 <h2>Add Player</h2>
 
-<%= form_for(@membership) do |f| %>
-    <% @non_members.each do |user| %>
-        <%= check_box_tag "memberships_ids[]", [user.id, @team.id] %>
-        <%= user.full_name %><br>
-    <% end %>
+<%= form_for [@team, @membership] do |f| %>
+    <%= f.collection_select :user_id, @non_members.all, :id, :full_name %>
     <div class="actions">
         <%= f.submit "Add Members" %>
     </div>
