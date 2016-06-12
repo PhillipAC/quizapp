@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :games
   # devise_for :users
   devise_for :users, :controllers => { registrations: 'registrations' }
   # NOTE: put this after the 'devise_for :users' line
