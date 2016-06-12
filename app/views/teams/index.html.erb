@@ -1,0 +1,19 @@
+<ul>
+  <% @teams.each do |team| %>
+    <li><%= team.name %></li>
+    <ul>
+      <% if team.members.length > 0 %>
+        <strong>Members:</strong>
+        <% team.members.each do |user| %>
+          <li><%= user.first_name + " " + user.last_name + ": " + user.username%></li>
+        <% end %>
+      <% end %>
+      <% if team.coaches.length > 0 %>
+        <strong>Coaches:</strong>
+        <% team.coaches.each do |user| %>
+          <li><%= user.first_name + " " + user.last_name + ": " + user.username%></li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>

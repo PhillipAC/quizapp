@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+    <%= "AH you are logged in" + current_user.username %> <br>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> <br>
+    <% end %>
+
+Test/Default
