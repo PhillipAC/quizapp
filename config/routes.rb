@@ -9,9 +9,11 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root to: 'static_pages#home'
-  resources :teams
-  resources :memberships
-  get 'memberships/:id/new' => 'memberships#new'
+  resources :teams do
+    resources :memberships
+  end
+  # get 'memberships/:id/new' => 'memberships#new'
+  # post 'memberships/:id/new' => 'memberships#create'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

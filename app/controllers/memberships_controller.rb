@@ -11,7 +11,8 @@ class MembershipsController < ApplicationController
             @membership = Membership.new(user[0], user[1])
             @membership.save
         end
-        redirect_to root_path
+        
+        #redirect_to root_path
     end
     
     private
