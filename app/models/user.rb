@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   has_many :teams, through: :memberships, source: :team
   has_many :coaching_teams, through: :leaderships, source: :team
   
+  
   def full_name
     "#{first_name} #{last_name}".titleize
   end

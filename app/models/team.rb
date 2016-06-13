@@ -6,4 +6,7 @@ class Team < ActiveRecord::Base
     has_many :leaderships, dependent: :destroy
     has_many :members, through: :memberships, source: :user
     has_many :coaches, through: :leaderships, source: :user
+    
+    has_many :matchups, dependent: :destroy
+    has_many :matches, through: :matchups
 end

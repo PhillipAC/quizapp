@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :matchups
+  resources :matches
+  resources :categories
   resources :questions
   resources :games
   # devise_for :users
