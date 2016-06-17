@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @season.name %><br>
+  <Strong>Games:</Strong>
+  <ul>
+    <% @season.games.each do |game| %>
+      <li><%= link_to game.name, game_path %></li>
+    <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Edit', edit_season_path(@season) %> |
+<%= link_to 'Back', seasons_path %>

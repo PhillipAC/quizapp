@@ -25,9 +25,15 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(game_params)
-
+    @game.season = Season.find(:season_id)
     respond_to do |format|
       if @game.save
+        10.times do |i|
+          name = @game.name + ":" + i.to_s
+          question = @game.questions.build name: name 
+          question.category = Category.first
+          question.save
+        end
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
         format.json { render :show, status: :created, location: @game }
       else
@@ -71,4 +77,5 @@ class GamesController < ApplicationController
     def game_params
       params.require(:game).permit(:name)
     end
+
 end

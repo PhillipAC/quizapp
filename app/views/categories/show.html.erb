@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @category.type %>
+  <strong>Name:</strong>
+  <%= @category.name %>
+  <ul>
+  <% @category.questions.each do |question| %>
+    <li><%= link_to question.name, question_path %></li>
+  <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |

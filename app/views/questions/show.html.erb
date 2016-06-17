@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+Category: 
+<%= link_to @question.category.name, category_path(@question.category.id) %> <br>
+Game: 
+<%=  link_to @question.game.name, game_path(@question.game.id) %> <br>
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>

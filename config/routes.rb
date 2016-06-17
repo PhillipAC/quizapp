@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  resources :categories
+  resources :seasons
   resources :matchups
   resources :matches
-  resources :categories
   resources :questions
   resources :games
   # devise_for :users
@@ -16,7 +17,20 @@ Rails.application.routes.draw do
   root to: 'static_pages#home'
   resources :teams do
     resources :memberships
+    resources :leaderships
   end
+  
+  resources :seasons do
+    resources :games 
+  end
+  
+  resources :questions 
+  
+  resources :matches do
+    resources :matchups
+  end
+  
+  resources :category
   # get 'memberships/:id/new' => 'memberships#new'
   # post 'memberships/:id/new' => 'memberships#create'
 

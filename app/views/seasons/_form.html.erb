@@ -1,10 +1,10 @@
-<%= form_for @game do |f| %>
-  <% if @game.errors.any? %>
+<%= form_for(@season) do |f| %>
+  <% if @season.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+      <h2><%= pluralize(@season.errors.count, "error") %> prohibited this season from being saved:</h2>
 
       <ul>
-      <% @game.errors.full_messages.each do |message| %>
+      <% @season.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
